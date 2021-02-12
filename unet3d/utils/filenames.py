@@ -1,7 +1,7 @@
 import os
 from functools import partial, update_wrapper
 
-from unet3d.utils import sequences as keras_sequences
+# from unet3d.utils import sequences as keras_sequences
 from unet3d.utils.pytorch import dataset as pytorch_datasets
 from unet3d.utils.utils import load_image, load_json, in_config
 
@@ -180,8 +180,8 @@ def load_bias(bias_filename):
 
 
 def load_sequence(sequence_name):
-    try:
-        sequence_class = getattr(keras_sequences, sequence_name)
-    except AttributeError as error:
-        sequence_class = getattr(pytorch_datasets, sequence_name)
+    # try:
+    #     sequence_class = getattr(keras_sequences, sequence_name)
+    # except AttributeError as error:
+    sequence_class = getattr(pytorch_datasets, sequence_name)
     return sequence_class

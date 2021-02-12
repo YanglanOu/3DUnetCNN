@@ -1,7 +1,9 @@
 import os
+import sys
 import argparse
 import pandas as pd
 import numpy as np
+sys.path.append(os.getcwd())
 from unet3d.train import run_training
 from unet3d.utils.filenames import wrapped_partial, generate_filenames, load_bias, load_sequence
 from unet3d.utils.sequences import (WholeVolumeToSurfaceSequence, HCPRegressionSequence, ParcelBasedSequence,
